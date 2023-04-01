@@ -1,0 +1,54 @@
+*,*::before, *::after {
+box-sizing: border-box;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+
+}
+header{
+    position: top;
+}
+body {
+    padding: 0;
+    margin:0;
+display:flex;
+width: 100vw;
+height: 100vh;
+justify-content: center;
+align-items: center;
+background-color: aliceblue;
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
+    background-color: aliceblue;
+}
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin:10px 0; 
+    background-color:azure;
+   
+}
+
+
+.btn{
+    border-radius: 10px;
+}
+.btn:hover{
+    border-color: black;
+
+}
+#start-btn{
+    text-align: center;
+    font-size: 0pt;
+}
+.hide{
+    display: none;
+}
+#Score-board{
+    align-items:top;
+}
