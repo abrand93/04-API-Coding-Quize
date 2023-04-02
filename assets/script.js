@@ -161,7 +161,7 @@ A.addEventListener('click', function()
        }
        else{
         Incorrect()
-        setTimeout(Incorrect, 3000)
+        
         questionsIndex++
         score = score - 10
         timeLeft = timeLeft - 10
