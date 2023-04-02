@@ -1,6 +1,9 @@
+
+//Variables for my buttons setting them using there ID 
 var startButton = document.getElementById('str-btn')
 var submitButton = document.getElementById('Submit-btn')
 var tryAgainButton = document.getElementById('start-Over')
+// variables for the containers 
 var questionContainer = document.getElementById('questions-container')
 var questionsElement = document.getElementById('questions')
 var answer = document.getElementById('answer-buttons')
@@ -9,9 +12,11 @@ var showFeedbackIncorrect = document.getElementById('feedback-wrong')
 var score = 0
 var scoreBoard = document.querySelector('.current-score')
 var finalScore = document.querySelector('.final-score')
+//variable for the timer 
 var timerEl = document.getElementById('countdown');
 var inputName = document.getElementById('name')
 var questionsIndex = 0
+//variables for the container for the anwers buttons 
 var A = document.getElementById('A')
 var B = document.getElementById('B')
 var C = document.getElementById('C')
@@ -21,10 +26,22 @@ var endScore = document.getElementById('end-score')
 var displayName = document.getElementById('display-name')
 var displayScore = document.getElementById('display-score')
 var startContainer= document.getElementById('start-btn')
-var hightScores = []
+var localStorageContent = localStorage.getItem('scores')
+let heighScore 
+if(localStorageContent === null){
+    heighScore = []
+} else{
+    heighScore = JSON.parse(localStorageContent)
+}
 
 
 
+// array I'm not using yet. 
+
+//number of secons to start the time with 
+var timeLeft = 30
+
+//The array of the anwsers and questions 
 var questions = [
     { questions: 'Arrays in JavaScript can be used to store _______',
     options: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
@@ -43,14 +60,16 @@ var questions = [
     options: ['Yes', 'No', 'maybe', 'sometimes'],
     answer:'Yes'},
 ]
+// Function for display is the anwers selected is correct for half a second 
 function Correct(){
     showFeedbackCorrect.classList.remove('hide')
     setTimeout(function(){
         
         showFeedbackCorrect.classList.add('hide')
     },500)
-    
+
 }
+//Function for display if you got the anwers incorrect 
 function Incorrect(){
     showFeedbackIncorrect.classList.remove('hide')
     setTimeout(function(){
@@ -58,17 +77,18 @@ function Incorrect(){
         showFeedbackIncorrect.classList.add('hide')
     },500)
 }
-var timeLeft = 30
 
+// this function shows the score
 function ShowScore(){
     scoreBoard.classList.remove('hide')
 
     scoreBoard.innerText = " Current score " + score
 }
+// this function is for showing the Final score at the end 
 function showFinalScore(){
     finalScore.innerText = " Current score " + score
 }
-
+// this funcing starts the timer
 function startTimer(){
 var timeInterval = setInterval(function () {
   
@@ -88,6 +108,7 @@ var timeInterval = setInterval(function () {
   }, 1000);
 
 }
+// this is an event listener when you click the start quize button 
 startButton.addEventListener('click', startQuize)
 
 function startQuize(){
@@ -100,10 +121,8 @@ showQuestions()
 showAnswer()
 }
 
-function setNextQuestion (){
-  
-}
 
+/// this changes the innertext to the options based on the question
 function showAnswer(){
     if(questionsIndex >= 5){
         return
@@ -115,15 +134,9 @@ function showAnswer(){
     
 }
 
+// this is for the local storage for the users name and scroe 
 
-function renderLastRegistered() {
-    var name = localStorage.getItem("name");
-    var score = localStorage.getItem("score");
-    displayName.textContent = name;
-  displayScore.textContent = score
-}
-
-
+//This functions show the questings 
 function showQuestions(){
     if(questionsIndex >= 5){
         return
@@ -133,7 +146,7 @@ function showQuestions(){
     
 }
 
-
+//This event listener is for options A when you click on it 
 A.addEventListener('click', function()
   
 {
@@ -150,7 +163,7 @@ A.addEventListener('click', function()
         Incorrect()
         setTimeout(Incorrect, 3000)
         questionsIndex++
-        score--
+        score = score - 10
         timeLeft = timeLeft - 10
     }
       showQuestions()
@@ -159,7 +172,7 @@ A.addEventListener('click', function()
        console.log(score)
        
     })
-       //break
+       // this for whn you click on options B 
     B.addEventListener('click', function()
   
 {
@@ -183,7 +196,7 @@ A.addEventListener('click', function()
        showAnswer()
        ShowScore()
     })
-    //break
+    // this is for when you click on options C 
     C.addEventListener('click', function()
   
     {
@@ -205,7 +218,7 @@ A.addEventListener('click', function()
            showQuestions()
            showAnswer()
         })
-        
+        // this for when you select options D 
         D.addEventListener('click', function()
     
         {
@@ -229,21 +242,24 @@ A.addEventListener('click', function()
                showAnswer()
                
             })
-
+            //This event listener is for when you want to upload your score 
             submitButton.addEventListener('click',function(){
                 
                 var name = document.querySelector('#users-name').value
-                var usersScore = score
-                localStorage.setItem('name', name)
+                var usersScore = score + name
+
+                heighScore.push(usersScore)
+                localStorage.setItem('scores' , JSON.stringify(heighScore))
+                var nameScores = localStorage.getItem("scores")
+              localStorage.setItem('name', name)
+                displayName.textContent = nameScores;
                 localStorage.setItem('score', usersScore)
                 inputName.classList.add('hide')
                 endScore.classList.remove('hide')
                 tryAgainButton.classList.remove('hide')
-                renderLastRegistered()
-
-
-            } 
-            )
+            })
+            
+            // this lets you start the quize over 
             tryAgainButton.addEventListener('click',function(){
               
                 inputName.classList.add('hide')
@@ -257,3 +273,4 @@ A.addEventListener('click', function()
                 scoreBoard.classList.add('hide')
 
                 })
+             
