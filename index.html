@@ -8,11 +8,9 @@
     <link rel="stylesheet" type="text/css" href="/04-API-Quize/assets/style.css">
     <script defer src="/04-API-Quize/assets/script.js"></script>
 </head>
-<header>
-    <div class = "current-score">
-    <div id="Score-board"></div>
-</div>
-</header>
+
+    
+
 
 <body>
     
@@ -22,30 +20,46 @@
     <div id="questions">Questions</div>
     <h2 id = "countdown"></h2>
 
+    <div class = "current-score hide">
+        <div id="Score-board"></div>
+    </div> 
     
     <div id="answer-buttons" class="btn-grid">
     <button id="A" class="btn">Answer 1</button>    
     <button id="B" class="btn">Answer 2</button>    
     <button id="C" class="btn">Answer 3</button>    
     <button id="D" class="btn">Answer 4</button> 
-    <div id = feedback-correct></div>
-    <div id = feedback-wrong></div>   
+    <div class = "hide" id = "feedback-correct"> Correct</div>
+    <div class = "hide" id = "feedback-wrong"> Incorrect</div>   
     </div>
 </div>
 
 
-    <div id="start-btn" class ="start_btn"><button>Start Quiz</button></div>
+    <div id="start-btn" class ="start_btn">
+        <h2>Coding Quize</h2>
+        <p>The following is a list of coding questions. For every question you get right you will be rewarded with 10 points. For every question you ger wrong you will lose 10 points and 10 seconds</p>
+        <button id="str-btn">Start Quiz</button>
+       
+    </div>
 
-<section class = "hide" id="name">
+<section  class ="hide" id="name">
 
     <h2>Enter your name</h2>
-    <input type= "text">
+    <input id ="users-name" type= "text">
     <div class = "final-score">
         <div id="final"></div>
     </div>
-    <div id="Submit-btn" class ="start_btn"><button>Submit</button></div>
+    <div  class ="start_btn"><button id="Submit-btn">Submit Score</button></div>
 </section>
+    <div  ><button class ="hide" id="start-Over">Try again</button></div>
+
+    <section class="hide" id="end-score">
+        <span id="display-name"></span>
+        <span id="display-score"></span>
+    </section>
+    <section>
     
+    </section>
 </div>
 </body>
 </html>

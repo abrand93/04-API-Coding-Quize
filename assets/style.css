@@ -15,7 +15,7 @@ width: 100vw;
 height: 100vh;
 justify-content: center;
 align-items: center;
-background-color: aliceblue;
+background-color: rgb(75, 149, 214);
 }
 
 .container {
@@ -23,20 +23,21 @@ background-color: aliceblue;
     max-width: 80%;
     border-radius: 5px;
     box-shadow: 0 0 10px 2px;
-    background-color: aliceblue;
+    background-color: rgb(247, 200, 212);
 }
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin:10px 0; 
-    background-color:azure;
+    background-color:rgb(237, 240, 240);
    
 }
 
 
 .btn{
     border-radius: 10px;
+    margin: 5px;
 }
 .btn:hover{
     border-color: black;
@@ -44,11 +45,33 @@ background-color: aliceblue;
 }
 #start-btn{
     text-align: center;
-    font-size: 0pt;
+    
 }
+
+#name{
+    text-align: center;
+}
+
+#start-Over{
+    text-align: center;
+}
+
+
 .hide{
     display: none;
 }
 #Score-board{
     align-items:top;
+}
+
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30pt;
+}
+p{
+    padding: 30px;
+}
+.answer-buttons{
+    background-color: rgb(247, 200, 212)
+
 }
