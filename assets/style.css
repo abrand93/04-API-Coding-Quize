@@ -71,5 +71,6 @@ h2{
 p{
     padding: 30px;
 }
-
-
+#questions {
+    font-size: 40pt;
+}
