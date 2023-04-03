@@ -12,7 +12,7 @@ Here is the project in action
 ![alt css before](/04-API-Quize/assets/Screenshot%202023-04-03%20173440.png)
 
 
-![alt css after](/04-API-Quize/assets/Screenshot%202023-04-03%20173514.png)
+![alt css after](/assets/Screenshot%202023-04-03%20173514.png)
 
 [alt css after](/04-API-Quize/assets/Screenshot%202023-04-03%20173544.png)
 
