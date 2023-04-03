@@ -9,12 +9,12 @@ One thing I learned was how to use settimeout out. This delays a command. This i
 ## Screen Shots Of Redundant Code We Removed From CSS. 
 Here is the project in action 
 
-![alt css before](/04-API-Quize/assets/Screenshot%202023-04-03%20173440.png)
+![alt css before](/assets/Screenshot%202023-04-03%20173440.png)
 
 
 ![alt css after](/assets/Screenshot%202023-04-03%20173514.png)
 
-[alt css after](/04-API-Quize/assets/Screenshot%202023-04-03%20173544.png)
+[alt css after](/assets/Screenshot%202023-04-03%20173544.png)
 
 Here is a link to the updated page:  
 
